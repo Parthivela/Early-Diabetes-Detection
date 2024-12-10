@@ -1,0 +1,9 @@
+import matplotlib.pyplot as plt
+
+# Plot feature importances
+plt.figure(figsize=(10, 8))
+plt.barh(feature_importances['Feature'], feature_importances['Importance'])
+plt.xlabel('Importance')
+plt.title('Feature Importances')
+plt.gca().invert_yaxis()
+plt.show()
