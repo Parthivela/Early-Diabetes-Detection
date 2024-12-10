@@ -1,0 +1,52 @@
+# Split the data
+from sklearn.model_selection import train_test_split
+
+X = df_cleaned.drop('class', axis=1)
+y = df_cleaned['class']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Assuming X_train was originally a DataFrame
+feature_names = X_train.columns
+from sklearn.preprocessing import StandardScaler
+
+# Initialize the scaler
+scaler = StandardScaler()
+
+# Fit and transform the training data
+X_train_scaled = scaler.fit_transform(X_train)
+
+# Transform the testing data
+X_test_scaled = scaler.transform(X_test)
+# Train the model
+model = LogisticRegression()
+model.fit(X_train_scaled, y_train)
+# Evaluate the model
+y_pred = model.predict(X_test_scaled)
+accuracy = accuracy_score(y_test, y_pred)
+conf_matrix = confusion_matrix(y_test, y_pred)
+class_report = classification_report(y_test, y_pred)
+
+print(f"Accuracy: {accuracy}")
+print("Confusion Matrix:\n", conf_matrix)
+print("Classification Report:\n", class_report)
+
+from sklearn.tree import DecisionTreeClassifier
+
+# Instantiate the model
+model_dt = DecisionTreeClassifier()
+
+# Train the model
+model_dt.fit(X_train_scaled, y_train)
+
+# Predictions
+y_pred_dt = model_dt.predict(X_test_scaled)
+
+# Evaluate the model
+accuracy_dt = accuracy_score(y_test, y_pred_dt)
+conf_matrix_dt = confusion_matrix(y_test, y_pred_dt)
+class_report_dt = classification_report(y_test, y_pred_dt)
+
+print("Decision Tree Classifier:")
+print(f"Accuracy: {accuracy_dt}")
+print("Confusion Matrix:\n", conf_matrix_dt)
+print("Classification Report:\n", class_report_dt)
