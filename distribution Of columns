@@ -1,0 +1,11 @@
+#plot the distribution of all the columns
+columns_to_plot = ['Gender', 'Polyuria', 'Polydipsia', 'sudden weight loss',
+       'weakness', 'Polyphagia', 'Genital thrush', 'visual blurring',
+       'Itching', 'Irritability', 'delayed healing', 'partial paresis',
+       'muscle stiffness', 'Alopecia', 'Obesity','class']
+for col in  columns_to_plot:
+    sns.histplot(diab[col],kde=True)
+    plt.title(f'{col} Distribution')
+    plt.xlabel(col)
+    plt.ylabel("Frequeny")
+    plt.show()
