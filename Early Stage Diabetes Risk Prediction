@@ -1,0 +1,42 @@
+#import necessary libraries
+import pandas as pd 
+import numpy as np 
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings("ignore")
+#Read the data
+diab=pd.read_csv("diabetes_data_upload.csv")
+Sugar=diab
+diab
+#complete information about the data
+diab.info()
+Exploratory Data Analysis
+#Distribution of age
+#Performing univariant analysis 
+plt.figure(figsize=(10,5))
+plt.hist(diab['Age'],bins=30,color='skyblue',edgecolor='black')
+plt.title("Age distribution")
+plt.xlabel("Age")
+plt.ylabel("Frequency")
+plt.grid()
+plt.show()
+1
+#Distribution of age
+2
+#Performing univariant analysis 
+3
+plt.figure(figsize=(10,5))
+4
+plt.hist(diab['Age'],bins=30,color='skyblue',edgecolor='black')
+5
+plt.title("Age distribution")
+6
+plt.xlabel("Age")
+7
+plt.ylabel("Frequency")
+8
+plt.grid()
+9
+plt.show()
+
