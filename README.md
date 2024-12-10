@@ -1,5 +1,6 @@
 # Early Stage Diabetes Risk Prediction
 This project utilizes machine learning techniques to predict the risk of diabetes in its early stages, enabling proactive health management. The solution was built to identify individuals at risk based on key health metrics and demographic data
+
 Data Processing: Cleaned and preprocessed data to ensure accuracy and reliability.
 Exploratory Data Analysis: Uncovered insights and identified trends affecting diabetes risk.
 Feature Engineering: Selected key features contributing to model performance.
